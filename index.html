@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.adobe.com/fonts/abhaya-libre">
+    <link rel="preconnect" href="https://fonts.adobe.com/fonts/alegreya-sc" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+       *{
+        margin: 0;
+        padding:0;
+        box-sizing: border-box;
+       }
+
+        body{
+            /* background-color:#0C1622; */
+            color: white;
+            font-family:'Poppins', sans-serif;
+            position: relative;
+            overflow: hidden;
+           
+        }
+
+
+        /* Background Video Styling */
+        #bg-video {
+            position: fixed;
+            top: 10%;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: contain;
+            height:100px;
+            z-index: -1;
+        }
+        
+        nav{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: #03022d
+        }
+
+        nav ul{
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li{
+            list-style: none;
+            margin: 0 23px;
+            cursor: pointer;
+        }
+
+        .left{
+            font-sizes: 1.5rem;
+            
+        }
+
+         .firstSection{
+            display: flex;
+            justify-content: space-around;
+            margin: 60px 0;
+         }
+
+         .firstSection > div{
+            width: 30%;
+        
+         }
+
+         
+
+         .leftSection{
+        
+            font-size: 4rem;
+         }
+
+         .rightSection img{
+            width: 50%;
+            
+         }
+         .purple{
+            color:aqua ; 
+         }
+
+         /*popup style*/
+         .overlay {
+             position: fixed;
+             top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      display: none;
+    }
+
+       .popup-box {
+        position: relative;
+      background: rgb(20, 114, 222);
+      color: rgb(249, 246, 249);
+      padding: 25px 40px;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      width: max-content;
+      max-width: 80%;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      animation: fadeIn 0.3s ease;
+      animation: fadeOut 1s ease ;
+    }
+
+      
+     .popup-box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, #00ffff, #ff00ff, #00ffff);
+  border: 20px solid transparent;
+  animation: rotateBorder 4s linear infinite;
+  border-top-color: #ffc107;
+  border-bottom: 0;
+  margin-left: -10px;
+  filter: drop-shadow(2px 2px 0 #000);
+  z-index: -1;
+  opacity: 0.1;
+}  
+       
+       /* .popup-box button {
+      padding: 10px 20px;
+      background-color: #6a11cb;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .popup-box button:hover {
+      background-color: #4c0fa3;
+    }  */
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+       </style>
+</head>
+<body>
+
+    <!-- 🔁 Background Video -->
+    <!-- <video autoplay muted loop id="bg-video">
+        <source src="Developers team.mp4" type="video/mp4">
+    </video> -->
+
+     <!-- 🔔 Popup -->
+  <div class="overlay" id="popupOverlay">
+    <div class="popup-box">
+      <h2>👋 Heyy! I'm Isha Sonkusare</h2>
+      <!-- <button onclick="closePopup()">Close</button> -->
+    </div>
+  </div>
+
+    <header>
+        <nav>
+            <div class="left">Isha Portfolio</div>
+            <div class="right"></div>
+            <ul>
+                <li><a href="home.html">About</a></li>
+                <!-- <li><a href="about.html"></a>About</li> -->
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+        <video autoplay muted loop id="bg-video">
+        <source src="Developers team.mp4" type="video/mp4">
+    </video>
+    <main>
+        <div>
+            <span class="heyy popup-name">Heyy</span><br>
+            I'm Isha Sonkusare
+        </div>
+        <section class="firstSection">
+            <div class="leftSection">
+                <!-- Heyy My name is -->
+                <br> 
+                <!-- <span class="purple">Isha Sonkusare</span> -->
+                
+                <!-- <div>and I am a passionate</div> -->
+                <!-- <div>Web Developer</div> -->
+            </div>
+            <div class="rightSection">
+                
+            <!-- <img src="jpg.png" alt="" > -->
+             <!-- <div class="Developers team.mp4"></div> -->
+            </div>
+           
+        </section>
+    </main>
+
+    <script>
+    // Show popup on page load
+    window.onload = function () {
+      document.getElementById('popupOverlay').style.display = 'flex';
+    }
+
+    // // Close the popup
+    // function closePopup() {
+    //   document.getElementById('popupOverlay').style.display = 'none';
+    // }
+
+    setTimeout(() => {
+        const popup = document.getElementById('popupOverlay');
+        popup.remove();
+    }, 5000);
+  </script>
+
+</body> 
+</html>
